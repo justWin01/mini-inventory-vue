@@ -1,0 +1,35 @@
+/* Dark mode animation */
+@keyframes fadeDark{
+    0%{
+    opacity:0;
+    transform: scale(0.97);
+    }
+    100%{
+    opacity:1;
+    transform: scale(1);
+    }
+    }
+    
+    .light-mode{
+    background:#f5f5f5;
+    min-height:100vh;
+    transition: background 0.5s;
+    }
+    
+    .dark-mode{
+    background:#121212;
+    color:white;
+    min-height:100vh;
+    animation: fadeDark 0.6s ease;
+    }
+    
+    .dark-mode .card{
+    background:#1e1e1e;
+    color:white;
+    }
+    
+    .dark-mode .list-group-item{
+    background:#2a2a2a;
+    color:white;
+    border-color:#444;
+    }
