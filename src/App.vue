@@ -1,5 +1,5 @@
 <script setup>
-import { useInventory } from './js/app'
+import { useInventory } from './function/app'
 
 const {
   itemName,
