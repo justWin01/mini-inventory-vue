@@ -1,41 +1,13 @@
 <script setup>
-import { ref, reactive, onMounted } from 'vue'
+import { useInventory } from './js/app'
 
-/* Primitive state */
-const itemName = ref("")
-
-/* Dark mode toggle */
-const darkMode = ref(false)
-
-/* Complex structure */
-const state = reactive({
-  inventory: []
-})
-
-function toggleDarkMode(){
-  darkMode.value = !darkMode.value
-}
-
-/* Add item */
-function addItem() {
-  if (itemName.value.trim() !== "") {
-    state.inventory.push({
-      name: itemName.value,
-      id: Date.now()
-    })
-    itemName.value = ""
-  }
-}
-
-/* Lifecycle */
-onMounted(() => {
-  console.log("Fetching inventory from API...")
-
-  state.inventory.push(
-    { id: 1, name: "Notebook" },
-    { id: 2, name: "Pen" }
-  )
-})
+const {
+  itemName,
+  darkMode,
+  state,
+  toggleDarkMode,
+  addItem
+} = useInventory()
 </script>
 
 <template>
