@@ -22,14 +22,6 @@ const {
 
 <h3 class="m-0">Mini Inventory Tracker</h3>
 
-<button 
-class="btn btn-sm btn-outline-secondary"
-@click="toggleDarkMode">
-
-{{ darkMode ? "Light Mode" : "Dark Mode" }}
-
-</button>
-
 </div>
 
 <div class="card-body">
