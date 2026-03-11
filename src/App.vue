@@ -5,65 +5,59 @@ const {
   itemName,
   darkMode,
   state,
-  toggleDarkMode,
   addItem
 } = useInventory()
 </script>
 
 <template>
+  <div class="container py-5">
 
-<div :class="darkMode ? 'dark-mode' : 'light-mode'">
+    <div class="card shadow-lg">
 
-<div class="container py-5">
+      <!-- HEADER -->
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="m-0">Mini Inventory Tracker</h3>
+      </div>
 
-<div class="card shadow-lg">
+      <!-- BODY -->
+      <div class="card-body">
 
-<div class="card-header d-flex justify-content-between align-items-center">
+        <!-- INPUT SECTION -->
+        <div class="input-group mb-3">
+          <input
+            v-model="itemName"
+            type="text"
+            class="form-control"
+            placeholder="Enter item"
+          />
 
-<h3 class="m-0">Mini Inventory Tracker</h3>
+          <button
+            class="btn btn-success"
+            @click="addItem"
+          >
+            Add Item
+          </button>
+        </div>
 
-</div>
+        <!-- INVENTORY LIST -->
+        <ul class="list-group">
 
-<div class="card-body">
+          <li
+            v-for="item in state.inventory"
+            :key="item.id"
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            {{ item.name }}
 
-<div class="input-group mb-3">
+            <span class="badge bg-success">
+              Item
+            </span>
+          </li>
 
-<input
-v-model="itemName"
-type="text"
-class="form-control"
-placeholder="Enter item"
-/>
+        </ul>
 
-<button
-class="btn btn-success"
-@click="addItem">
-Add Item
-</button>
+      </div>
+    </div>
 
-</div>
-
-<ul class="list-group">
-
-<li
-class="list-group-item d-flex justify-content-between align-items-center"
-v-for="item in state.inventory"
-:key="item.id">
-
-{{ item.name }}
-
-<span class="badge bg-success">Item</span>
-
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+  </div>
 </template>

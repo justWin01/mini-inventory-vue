@@ -7,9 +7,6 @@ export function useInventory() {
 
 	const state = reactive({inventory: []})
 
-	function toggleDarkMode() {
-		darkMode.value = ! darkMode.value
-	}
 
 	function addItem() {
 		if (itemName.value.trim() !== "") {
@@ -32,12 +29,6 @@ export function useInventory() {
 
 	})
 
-	return {
-		itemName,
-		darkMode,
-		state,
-		toggleDarkMode,
-		addItem
-	}
+	return {itemName, darkMode, state, addItem}
 
 }
