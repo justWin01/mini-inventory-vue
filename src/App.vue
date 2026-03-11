@@ -1,5 +1,5 @@
 <script setup>
-import { useInventory } from './function/app'
+import { useInventory } from './js/app'
 
 const {
   itemName,
@@ -36,7 +36,7 @@ placeholder="Enter item"
 />
 
 <button
-class="btn btn-primary"
+class="btn btn-success"
 @click="addItem">
 Add Item
 </button>
@@ -52,7 +52,7 @@ v-for="item in state.inventory"
 
 {{ item.name }}
 
-<span class="badge bg-primary">Item</span>
+<span class="badge bg-success">Item</span>
 
 </li>
 
